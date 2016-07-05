@@ -1,5 +1,5 @@
 /* variáveis globais */
-var app = angular.module('Eventos', ['ui.router','appFilereader']);
+var app = angular.module('Eventos', ['ui.router','appFilereader','ui.bootstrap']);
 var webservice = "http://localhost:8084/webservice/";
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -23,16 +23,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('cadpessoa', {
             url: '/cadpessoa',
             templateUrl: 'app/views/cadpessoa.html',
-            controller: 'cadpessoaController'
+            controller: 'CadPessoaController'
         })
         .state('cadcategoria', {
             url: '/cadcategoria',
             templateUrl: 'app/views/cadcategoria.html',
-            controller: 'cadcategoriaController'
+            controller: 'CadCategoriaController'
         })
         .state('cadevento', {
             url: '/cadevento',
             templateUrl: 'app/views/cadevento.html',
-            controller: 'cadeventoController'
+            controller: 'CadEventoController'
         });        
 });

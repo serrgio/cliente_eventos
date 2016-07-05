@@ -1,4 +1,4 @@
-/* global app */
+/* global app, webservice */
 
 app.controller('LoginController', ["$scope", function ($scope, $state, $http) {
         $scope.usuario = {email: "", senha: "", confsenha: "", dtnascimento: ""};
