@@ -3,3 +3,38 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.footer{
+    background-color: #eee;
+    height: auto;
+}
+.div-copyright{    
+    padding: 8px
+}
+.texto-copyright{
+    margin-top: 10px;
+    font-family: LatoRegular;
+    font-size: 10pt;
+}
+.div-logo-footer{
+    padding: 8px
+}
+.img-logo-footer{
+    height: 30px
+}
+@media (max-width: 991px){
+    .texto-copyright{
+        font-size: 8pt;
+    }
+}
+@media (max-width: 767px){
+    .div-copyright{  
+        display: none
+    }
+    .footer{
+        background-color: #eee;
+        height: 40px
+    }
+    .div-logo-footer{
+        padding: 4px
+    }
+}
