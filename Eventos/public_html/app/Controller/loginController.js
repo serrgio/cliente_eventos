@@ -1,7 +1,14 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/* global app */
 
-
+app.controller('LoginController', ["$scope", function ($scope, $state, $http) {
+        $scope.usuario = {email: "", senha: "", confsenha: "", dtnascimento: ""};
+        $scope.enviarLogin = function () {
+            var strUsuario = JSON.stringify($scope.usuario);
+            $http.post(webservice + 'login', strUsuario).success(function (data) {
+                sessionStorage.setItem("token", data);
+                $state.go('');
+            }).error(function () {
+                $state.go('login');
+            });
+        };
+    }]);
