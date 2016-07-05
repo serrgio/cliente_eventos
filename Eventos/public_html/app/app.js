@@ -1,5 +1,5 @@
 /* variáveis globais */
-var app = angular.module('Eventos', ['ui.router']);
+var app = angular.module('Eventos', ['ui.router','appFilereader']);
 var webservice = "http://localhost:8084/webservice/";
 
 app.config(function ($stateProvider, $urlRouterProvider) {
