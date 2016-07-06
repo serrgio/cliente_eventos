@@ -1,1 +1,22 @@
-<div>TODO write content</div>
+<div class="container">
+    <h2>Cadastro</h2>
+    <form role="form">
+        <div class="form-group">
+            <label for="nome">Nome:</label>      
+            <input type="text" class="form-control" ng-model="usuario.nome" placeholder="Digite o seu nome">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>      
+            <input type="email" class="form-control" ng-model="usuario.email" placeholder="Digite o seu email">
+        </div>
+        <div class="form-group">
+            <label for="data">Data:</label>      
+            <input type="date" class="form-control" ng-model="usuario.dtNascimento" placeholder="Digite a sua data de nascimento">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" ng-model="usuario.senha" placeholder="Digite uma senha">
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="insertPessoa()">Logar</button>
+    </form>
+</div>

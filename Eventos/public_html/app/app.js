@@ -1,7 +1,7 @@
 /* variáveis globais */
 var app = angular.module('Eventos', ['ui.router','appFilereader','ui.bootstrap']);
-var webservice = "http://localhost:8084/webservice/";
-
+var webservice = "http://localhost:8080/webservice-0.0.1/";
+var Usuario = {id: null, nome: null, senha: null, email: null, dtNascimento: null, endereco: null, perfil:null};
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
