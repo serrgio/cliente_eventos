@@ -1,0 +1,17 @@
+<span ng-include="'app/views/menu.html'"></span>
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron">
+                    <h4>{{usuario.nome}}</h4>
+                    <h4>{{usuario.email}}</h4>
+                    <hr>
+                    <h5>{{usuario.endereco.logradouro}} - {{usuario.endereco.complemento}} - {{usuario.endereco.localidade}}</h5>
+                    <h5>{{usuario.endereco.bairro}}/{{usuario.endereco.uf}} - CEP: {{usuario.endereco.cep}}</h5>
+                    <div class="btn btn-sm btn-success" ng-click="deletePessoa()">Excluir</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
