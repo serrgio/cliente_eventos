@@ -68,11 +68,23 @@ app.controller('Controller', function ($scope, $state, $http) {
         var strUsuario = JSON.stringify($scope.usuario);
         $http.post(webservice + 'usuario/login', strUsuario).success(function (data) {
             sessionStorage.setItem("token", data);
+            loadPessoa(data);
             $state.go('adm');
         }).error(function () {
             $state.go('login');
         });
     };
+    loadPessoa = function (token) {
+        var objToken = {"valor": token};
+        var strToken = JSON.stringify(objToken);
+        $http.post(webservice + 'usuario/buscar', strToken).success(function (data) {
+            $scope.usuario = data;
+            $state.go('meusdados');
+        }).error(function () {
+            $state.go('adm');
+        });
+    };
+    
     $scope.insertPessoa = function () {
         var senha = calcMD5($scope.usuario.senha).toUpperCase();
         $scope.usuario.senha = senha;

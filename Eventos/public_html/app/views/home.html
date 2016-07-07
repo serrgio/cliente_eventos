@@ -1,15 +1,14 @@
-<span ng-include="'app/views/banner.html'"></span>
 <div class="container-fluid">
     <div class="container">
         <div class="row">
-            <span>
-                <a href="">
-                    <div class="col-sm-4 bloco_evento" ng-repeat="evento in lsteventos">
-                        <h3>{{evento.nome}}</h3>
-                        <h3>{{evento.descricao}}</h3>
-                        <img class="img-thumbnail center-block" src="{{evento.foto.foto}}" ng-show="evento.foto.foto" style="width:  100%; border-radius: 10px" />
+            <span>                
+                <div class="col-sm-4 bloco_evento" ng-repeat="evento in lsteventos">                    
+                    <img class="img-thumbnail center-block" src="{{evento.foto.foto}}" ng-show="evento.foto.foto" style="width:  100%; border-radius: 10px" />
+                    <div>
+                        <h4>{{evento.nome}}</h4>
+                        <p>{{evento.descricao}}</p>
                     </div>
-                </a> 
+                </div>
             </span>            
         </div>
     </div>
