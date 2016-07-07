@@ -6,7 +6,7 @@ var Endereco = {"id":null, "cep":null, "logradouro":null, "complemento":null, "b
 var Categoria = {"id":null,"nome":null,"descricao":null,"dtCadastro":null};
 var Evento = {"id":null, "idCategoria":null, "idUsuario":null, "nome":null, "descricao":null, "Endereco":null, "dtEvento":null, "foto":null};
 var EnderecoEvento = {"id":null, "cep":null, "logradouro":null, "complemento":null, "bairro":null, "localidade":null, "uf": null};
-var Foto = {"id":null, "idEvento":null, "nome":null, "descricao":null, "dtFoto":null, "base64":null};
+var Foto = {"id":null, "idEvento":null, "nome":null, "descricao":null, "dtFoto":null, "foto":null};
 app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
     $stateProvider
