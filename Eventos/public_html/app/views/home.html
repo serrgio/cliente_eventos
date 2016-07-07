@@ -4,8 +4,10 @@
         <div class="row">
             <span>
                 <a href="">
-                    <div class="col-sm-4 bloco_evento" style="background-image: url('')">
-                        <h3></h3>
+                    <div class="col-sm-4 bloco_evento" ng-repeat="evento in lsteventos">
+                        <h3>{{evento.nome}}</h3>
+                        <h3>{{evento.descricao}}</h3>
+                        <img class="img-thumbnail center-block" src="{{evento.foto.base64}}" ng-show="evento.foto.base64" style="width:  100%; border-radius: 10px" />
                     </div>
                 </a> 
             </span>            

@@ -2,12 +2,12 @@
     <br>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li ng-repeat="evento in lsteventos" data-target="#myCarousel" data-slide-to="{{$index}}" class="active"></li>
         </ol>
 
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="{{}}" alt="{{}}" width="460" height="345">
+            <div class="item" ng-repeat="evento in lsteventos">
+                <img class="img-thumbnail center-block" src="{{evento.foto.base64}}" ng-show="evento.foto.base64" style="height: 300px; border-radius: 10px" />
             </div>
         </div>
 

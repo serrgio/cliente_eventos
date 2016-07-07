@@ -5,7 +5,7 @@
             <form role="form">
                 <div class="form-group">
                     <label for="nome">Nome:</label>      
-                    <input type="text" class="form-control" ng-model="evento.nome" placeholder="Digite o seu nome">
+                    <input type="text" class="form-control" ng-model="evento.nome">
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descrição:</label> 
@@ -53,11 +53,16 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-sm-12">
+            <hr>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-6">
             <form role="form">
                 <div class="form-group">
                     <label for="titfoto">Título da Foto:</label>      
-                    <input type="text" class="form-control" ng-model="evento.foto.nome" placeholder="Digite o seu nome">
+                    <input type="text" class="form-control" ng-model="evento.foto.nome">
                 </div>
                 <div class="form-group">
                     <label for="descfoto">Descrição da foto:</label> 
@@ -65,13 +70,15 @@
                 </div>
                 <div class="form-group">
                     <label for="foto">foto:</label> 
-                    <input type="file" accept="image/*" ng-model="evento.foto.base64" class="form-control"><br>
+                    <input class="" class="form-control" type="file" ng-model="evento.foto.base64" accept="image/*" app-filereader/>
+                    <img class="img-thumbnail center-block" src="{{evento.foto.base64}}" ng-show="evento.foto.base64" style="height: 300px; border-radius: 10px" />
                 </div>
             </form>
-        </div>
+        </div>        
+    </div>
+    <div class="row">
         <div class="col-sm-6">
             <button type="submit" class="btn btn-default" ng-click="insertEvento()">Cadastrar</button>
         </div>
-        <div class="col-sm-3"></div>
     </div>
 </div>
