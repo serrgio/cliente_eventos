@@ -1,16 +1,20 @@
-/* global app, Usuario, webservice, calcMD5, Endereco, Categoria */
+/* global app, Usuario, webservice, calcMD5, Endereco, Categoria, Evento, EnderecoEvento, Foto */
 
 
 app.controller('Controller', function ($scope, $state, $http) {
     $scope.usuario = Usuario;
     $scope.usuario.endereco = Endereco;
+    $scope.evento = Evento;
+    $scope.evento.foto = Foto;
+    $scope.evento.Endereco = EnderecoEvento;
+
     $scope.lstcategorias = function () {
         $http.get(webservice + 'evento/getLstCategorias').success(function (data) {
             $scope.categorias = data;
         }).error(function () {
         });
     };
-    
+
     $scope.getLstEventos = function () {
 
     };
@@ -31,13 +35,23 @@ app.controller('Controller', function ($scope, $state, $http) {
 
     };
     $scope.insertEvento = function () {
-
+        $scope.evento.idUsuario = $scope.usuario.id;
+        var strEvento = JSON.stringify($scope.evento);
+        $http.post(webservice + 'evento/insert', strEvento).success(function () {
+            $state.go('adm');
+            getEvento();
+        }).error(function () {
+            $state.go('cadevento');
+        });
     };
     $scope.updateEvento = function () {
 
     };
     $scope.getEvento = function () {
-
+        $http.get(webservice + 'evento/getLst').success(function (data) {
+            $scope.lsteventos = data;
+        }).error(function () {
+        });
     };
     $scope.deleteEvento = function () {
 

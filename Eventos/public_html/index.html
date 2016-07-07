@@ -9,7 +9,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body ng-controller="Controller" ng-init="lstcategorias()">
+    <body ng-controller="Controller" ng-init="lstcategorias(); getEvento()">
         <span ng-include="'app/views/head.html'"></span>
         <ui-view></ui-view>
         <span ng-include="'app/views/footer.html'"></span>

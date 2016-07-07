@@ -1,7 +1,6 @@
 <div class="container">
     <h2>Cadastro de eventos</h2>
     <div class="row">
-        <div class="col-sm-3"></div>
         <div class="col-sm-6">
             <form role="form">
                 <div class="form-group">
@@ -14,16 +13,62 @@
                 </div> 
                 <div class="form-group">
                     <label for="categorias">Categorias:</label>
-                    <select ng-model="evento.categoria">
+                    <select ng-model="evento.idCategoria">
                         <option class="form-control" ng-repeat="categoria in categorias" value="{{categoria.id}}">{{categoria.nome}}</option>  
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="data">Data:</label>      
+                    <input type="date" class="form-control" ng-model="evento.dtEvento">
+                </div>
             </form>
         </div>
-        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <form role="form">
+                <div class="form-group">
+                    <label for="cep">CEP:</label>      
+                    <input type="text" class="form-control" ng-model="evento.endereco.cep">
+                </div>
+                <div class="form-group">
+                    <label for="logradouro">Logradouro:</label>      
+                    <input type="text" class="form-control" ng-model="evento.endereco.logradouro">
+                </div>
+                <div class="form-group">
+                    <label for="complemento">Complemento:</label>      
+                    <input type="text" class="form-control" ng-model="evento.endereco.complemento">
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" class="form-control" ng-model="evento.endereco.bairro">
+                </div>     
+                <div class="form-group">
+                    <label for="localidade">Localidade:</label>
+                    <input type="text" class="form-control" ng-model="evento.endereco.localidade">
+                </div>
+                <div class="form-group">
+                    <label for="uf">UF:</label>
+                    <input type="text" class="form-control" ng-model="evento.endereco.uf">
+                </div>
+            </form>
+        </div>
     </div>
     <div class="row">
-        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <form role="form">
+                <div class="form-group">
+                    <label for="titfoto">Título da Foto:</label>      
+                    <input type="text" class="form-control" ng-model="evento.foto.nome" placeholder="Digite o seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="descfoto">Descrição da foto:</label> 
+                    <textarea ng-model="evento.foto.descricao" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="foto">foto:</label> 
+                    <input type="file" accept="image/*" ng-model="evento.foto.base64" class="form-control"><br>
+                </div>
+            </form>
+        </div>
         <div class="col-sm-6">
             <button type="submit" class="btn btn-default" ng-click="insertEvento()">Cadastrar</button>
         </div>
